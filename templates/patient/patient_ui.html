@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Disease Prediction System</title>
+    <link rel="stylesheet" href="/static/gentle.css">
+    <style>
+        body { background: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .container { max-width: 800px; margin: 60px auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 40px 32px 32px 32px; }
+        .logo { display: block; margin: 0 auto 24px auto; width: 80px; }
+        h1 { color: #2a4365; text-align: center; margin-bottom: 12px; }
+        p { color: #4a5568; text-align: center; font-size: 1.1rem; }
+        .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 36px; }
+        .action-card { background: #e6f0fa; border-radius: 10px; padding: 24px 32px; min-width: 220px; text-align: center; box-shadow: 0 2px 8px rgba(49,130,206,0.07); transition: box-shadow 0.2s; }
+        .action-card:hover { box-shadow: 0 4px 16px rgba(49,130,206,0.15); }
+        .action-card a { color: #225ea8; text-decoration: none; font-weight: 600; font-size: 1.08rem; }
+        .action-card a:hover { text-decoration: underline; }
+        footer { text-align: center; color: #a0aec0; margin-top: 40px; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/static/profile.PNG" alt="Patient Logo" class="logo">
+        <h1>Welcome, Patient</h1>
+        <p>
+            Access your dashboard to check symptoms, view your consultation history, and manage your profile.<br>
+            Use the options below to get started.
+        </p>
+        <div class="actions">
+            <div class="action-card">
+                <a href="/checkdisease">Check Disease</a>
+            </div>
+            <div class="action-card">
+                <a href="/pconsultation_history">Consultation History</a>
+            </div>
+            <div class="action-card">
+                <a href="/pviewprofile/{{ request.session.patientusername|default:'' }}">View Profile</a>
+            </div>
+            <div class="action-card">
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Disease Prediction System. All rights reserved.
+    </footer>
+</body>
+</html>
